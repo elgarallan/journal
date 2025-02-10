@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
   get '/dashboard', to: 'home#dashboard', as: 'dashboard'
+
+  resources :categories, only: [:new, :create]
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

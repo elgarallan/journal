@@ -5,6 +5,7 @@ class HomeController < ApplicationController
     end
   
     def dashboard
+      @categories = current_user.categories
     end
   
   end

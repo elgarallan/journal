@@ -8,3 +8,20 @@
     <%= button_to 'Logout', logout_path, method: :delete, class: "btn-logout" %>
   </div>
 </div>
+
+<!-- Categories Container -->
+<div class="categories-container">
+  <h2>What are your goals today?</h2>
+
+  <div class="categories-grid">
+    <% @categories.each do |category| %>
+      <div class="category-box">
+        <h3><%= category.name %></h3>
+      </div>
+    <% end %>
+  </div>
+
+  <p class="signup-link">
+    <%= link_to 'New Category', new_category_path, class: "signup-btn" %>
+  </p>
+</div>
