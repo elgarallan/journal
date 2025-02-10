@@ -1,0 +1,31 @@
+<div class="login-container">
+  <div class="login-box">
+    <i class="fa-solid fa-pen-to-square logo"></i>
+    <h2>Signup</h2>
+
+    <%= form_with(url: '/users', model: @user, class: "login-form") do |f| %>
+      <p class="input-field">
+        <%= f.label 'Username' %>
+        <%= f.text_field :username, class: "input-box" %>
+      </p>
+
+      <p class="input-field">
+        <%= f.label "Email" %>
+        <%= f.text_field :email, class: "input-box" %>
+      </p>
+
+      <p class="input-field">
+        <%= f.label 'Password' %>
+        <%= f.password_field :password, class: "input-box" %>
+      </p>
+
+      <p class="login-button">     
+        <%= f.submit "Signup", class: "btn-login" %>
+      </p>
+    <% end %>
+
+    <p class="signup-link">
+      Already have an account? <%= link_to 'Login', login_path, class: "signup-btn" %>
+    </p>
+  </div>
+</div>
