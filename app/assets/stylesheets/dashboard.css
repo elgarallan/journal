@@ -1,9 +1,9 @@
 /* Header Styling */
 .header {
     display: flex;
-    justify-content: space-between; /* Pushes content to left and right */
+    justify-content: space-between;
     align-items: center;
-    background-color: #333; /* Dark background */
+    background-color: #333;
     color: white;
     padding: 15px 20px;
   }
@@ -16,7 +16,7 @@
   
   /* Logout Button Styling */
   .btn-logout {
-    background-color: #e74c3c; /* Red background */
+    background-color: #e74c3c;
     color: white;
     font-weight: bold;
     padding: 10px 15px;
@@ -25,8 +25,7 @@
     cursor: pointer;
   }
   
-  /* Hover Effect */
   .btn-logout:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    background-color: #c0392b;
   }
   

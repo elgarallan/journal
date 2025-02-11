@@ -21,10 +21,42 @@
     <% @categories.each do |category| %>
       <div class="category-box">
         <h3><%= category.name %></h3>
-        <div class="category-actions">
-          <%= link_to "Edit", edit_category_path(category), class: "edit-btn" %>
-          <%= button_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %>
-        </div>
+        
+      <div class="category-actions">
+        <%= link_to edit_category_path(category), class: "edit-btn", title: "Edit Category" do %>
+          <i class="fa-solid fa-pen"></i>
+        <% end %>
+
+        <%= button_to category_path(category), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn", title: "Delete Category" do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+    </div>
+
+<!-- Display tasks inside the category -->
+<ul class="task-list">
+<% if category.tasks.any? %>
+  <% category.tasks.each do |task| %>
+    <li class="task-item">
+      <span class="task-name"><%= task.name %></span>
+      <div class="task-actions">
+        <%= link_to edit_category_task_path(category, task), class: "edit-task-btn", title: "Edit Task" do %>
+          <i class="fa-solid fa-pen"></i>
+        <% end %>
+
+        <%= button_to category_task_path(category, task), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-task-btn", title: "Delete Task" do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+  <% else %>
+    <li>No tasks yet.</li>
+  <% end %>
+</ul>
+
+        <p>
+          <%= link_to "Add Task", new_category_task_path(category), class: "add-task-btn" %>
+        </p>
       </div>
     <% end %>
   </div>

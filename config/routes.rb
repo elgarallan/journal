@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'home#dashboard', as: 'dashboard'
 
-  resources :categories, only: [:new, :create, :edit, :update, :destroy]
-  
+  resources :categories, only: [:new, :create, :edit, :update, :destroy] do
+    resources :tasks, only: [:new, :create, :edit, :update, :destroy]
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

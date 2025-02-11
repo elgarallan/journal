@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f5f7; /* Slack-like background */
+  background-color: #f4f5f7;
 }
 
 /* Login Box Styling */
@@ -20,7 +20,7 @@
 /* Slack-like Logo/Icon */
 .logo {
   font-size: 50px;
-  color: #611f69; /* Slack's purple theme */
+  color: #611f69;
   margin-bottom: 10px;
 }
 
@@ -48,7 +48,7 @@ h2 {
 /* Login Button */
 .btn-login {
   width: 100%;
-  background-color: #611f69; /* Slack purple */
+  background-color: #611f69; 
   color: white;
   font-weight: bold;
   border: none;
@@ -77,4 +77,21 @@ h2 {
 
 .signup-btn:hover {
   text-decoration: underline;
+}
+
+ /*  Subtitle Styling */
+ .subtitle {
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
+}
+
+/* Title Styling */
+.title {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
 }
