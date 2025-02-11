@@ -13,15 +13,20 @@
 <div class="categories-container">
   <h2>What are your goals today?</h2>
 
+  <p class="signup-link">
+    <%= link_to 'Add Category', new_category_path, class: "signup-btn" %>
+  </p>
+
   <div class="categories-grid">
     <% @categories.each do |category| %>
       <div class="category-box">
         <h3><%= category.name %></h3>
+        <div class="category-actions">
+          <%= link_to "Edit", edit_category_path(category), class: "edit-btn" %>
+          <%= button_to "Delete", category_path(category), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %>
+        </div>
       </div>
     <% end %>
   </div>
 
-  <p class="signup-link">
-    <%= link_to 'New Category', new_category_path, class: "signup-btn" %>
-  </p>
 </div>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'home#dashboard', as: 'dashboard'
 
-  resources :categories, only: [:new, :create]
+  resources :categories, only: [:new, :create, :edit, :update, :destroy]
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
