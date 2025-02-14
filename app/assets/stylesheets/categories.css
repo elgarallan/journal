@@ -26,8 +26,8 @@
   
   .category-actions {
     display: flex;
-    justify-content: center; /* Centers buttons */
-    gap: 10px; /* Adds space between buttons */
+    justify-content: center; 
+    gap: 10px; 
     margin-top: 10px;
   }
   
@@ -112,3 +112,20 @@
   .delete-task-btn:hover {
     background-color: #c0392b;
   }
+
+  /* 📱 Mobile (1 column) */
+@media (max-width: 600px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+
+/* 📲 Tablets (2 columns) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
