@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-    before_action :set_category
+  before_action :require_login  
+  before_action :set_category
   
     def new
       @task = @category.tasks.build
@@ -10,7 +11,7 @@ class TasksController < ApplicationController
       if @task.save
         redirect_to dashboard_path, notice: "Task added successfully!"
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -40,6 +41,10 @@ class TasksController < ApplicationController
     
 
     private
+
+    def require_login
+      redirect_to login_path unless current_user
+    end
   
     def set_category
       @category = Category.find(params[:category_id])

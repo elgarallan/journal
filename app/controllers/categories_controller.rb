@@ -9,9 +9,9 @@ class CategoriesController < ApplicationController
     def create
       @category = current_user.categories.build(category_params)
       if @category.save
-        redirect_to dashboard_path, notice: "Category created successfully!"
+        redirect_to dashboard_path, alert: "Category created successfully!"
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
 
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
       if @category.update(category_params)
         redirect_to dashboard_path, notice: "Category updated successfully!"
       else
-        render :edit
+        render :edit, status: :unprocessable_entity
       end
     end
 
