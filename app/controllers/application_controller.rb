@@ -4,21 +4,16 @@ class ApplicationController < ActionController::Base
   before_action :set_current_user
 
   def set_current_user
-    current_user
+    @current_user = current_user
   end
 
   def authenticate_user
     unless current_user
-      redirect_to root_path
+      redirect_to root_path, alert: "Please log in to continue."
     end
   end
 
   def current_user
-    @current_user ||=
-      begin
-        return nil unless session[:user_id]
-
-        User.find(session[:user_id])
-      end
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 end
